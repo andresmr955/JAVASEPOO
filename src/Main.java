@@ -3,7 +3,7 @@ public class Main {
         System.out.println("Todo esta funcionando muy bien");
 
         Doctor myDoctor = new Doctor();
-        myDoctor.name = "Andres";
+        myDoctor.name = "Andres Marquez";
         myDoctor.showName();
     }
 }
