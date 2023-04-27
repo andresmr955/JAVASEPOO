@@ -10,8 +10,9 @@ public class Main {
         //System.out.println(Doctor.id);
 
         Doctor myDoctorAnd = new Doctor();
+        myDoctor.name = "Angie Bareno";
+        myDoctor.showName();
         myDoctor.showId();
-
         showMenu();
 
     }
