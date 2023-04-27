@@ -9,13 +9,11 @@ public class Main {
         myDoctor.name = "Andres Marquez Esta es el objeto ya existente";
         myDoctor.showName();
         myDoctor.showId();
-        System.out.println(Doctor.id);
-
-        Doctor.id++;
+        //System.out.println(Doctor.id);
 
         Doctor myDoctorAnn = new Doctor();
         myDoctor.showId();
-        System.out.println(Doctor.id);
+        //System.out.println(Doctor.id);
 
 
     }
