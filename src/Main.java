@@ -16,6 +16,7 @@ public class Main {
 
         Patient patient2 = new Patient("Alejandra", "alejandra@gmail.oom");
 
+        // Esto es para aprender la diferencia de variable vs objeto: Desde la memoria del pc
         System.out.println("Este es el paciente 1 " + patient.getName());
         System.out.println("Este es el paciente 2 " + patient2.getName());
         patient2 = patient;
@@ -23,11 +24,6 @@ public class Main {
         System.out.println("Este es el nuevo paciente 1 " + patient.getName());
         System.out.println( "Este es el paciente 1 asignado al dos " + patient2.getName());
 
-        //Aqui se aprendio como encapsular y autilizar los modificadores de acceso de acceso como private, protected, public,default
-        patient.setWeight(54.6);
-        System.out.println(patient.getWeight());
 
-        patient.setPhoneNumber("12345678");
-        System.out.println(patient.getPhoneNumber());
     }
 }
