@@ -1,76 +1,60 @@
-import java.util.Date;
 import java.util.ArrayList;
-public class Doctor {
-    // atributos o propiedades
-    static int id = 0;// autoincrement
+import java.util.Date;
+public class Doctor{
+    //Atributos
+    static int id = 0; //Autoincrement
     private String name;
     private String email;
     private String speciality;
 
+    //Available appoinment
 
-
-
-    //Aqui visualizamos el constructor doctor aunque normalmente no esta
     Doctor(){
-        System.out.println("Construyendo el objeto Doctor");
+        System.out.println("Construyendo el metodo constructor");
+
     }
 
-        Doctor(String name, String speciality){
-            System.out.println("El nombre del Doctor asignado es: " + name);
-            id++;
-            this.name = name;//"Andres Marquez""andresmr955@gmail.com"
-            this.speciality = speciality;
-
-        }
-
-
-
-    //Comportamientos
-    public void showName(){ // se declara un metodo
-        System.out.println(name); //Nos permite imprimer lo que llamemos en este caso name
+    Doctor(String name, String speciality){
+        System.out.println("El nombre del doctor asignado es: " + name + speciality);
+        id++;
+        this.name = name;
+        this.speciality = speciality;
     }
-
+    //Metodos o Comportamientos
+    public void showName(){
+        System.out.println(name);
+    }
     public void showId(){
-        System.out.println("ID Doctor: " + id);
+        System.out.println("ID Doctor " + id);
     }
-    //Available appointment
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
-    public void addAvailableAppoinment(Date date, String time){}
+    ArrayList<AvailableAppoinment> availableAppoinments = new ArrayList<>();
+    public void addAvailableAppoinment(Date date, String time){
+        availableAppoinments.add(new Doctor.AvailableAppoinment(date,time));
+    }
 
-    public static class AvailableAppointment{
-        private int id_availableAppointment;
+    public ArrayList<AvailableAppoinment> getAvailableAppoinments(){
+        return availableAppoinments;
+    }
+    public static class AvailableAppoinment{
+        private int id;
         private Date date;
         private String time;
-
-        public AvailableAppointment(Date date, String time){
+        public AvailableAppoinment(Date date, String time){
             this.date = date;
             this.time = time;
         }
-    }
 
-        public int getId_availableAppointment() {
-            return id_availableAppointment;
-        }
-
-        public void setId_availableAppointment(int id_availableAppointment) {
-            this.id_availableAppointment = id_availableAppointment;
+        public int getId() {
+            return id;
         }
 
         public Date getDate() {
             return date;
         }
 
-        public void setDate(Date date) {
-            this.date = date;
-        }
-
         public String getTime() {
             return time;
         }
 
-        public void setTime(String time) {
-            this.time = time;
-        }
-
-
+    }
 }
