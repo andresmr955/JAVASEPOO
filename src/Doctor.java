@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
+
+
 public class Doctor{
     //Atributos
     static int id = 0; //Autoincrement
@@ -7,7 +9,6 @@ public class Doctor{
     private String email;
     private String speciality;
 
-    //Available appoinment
 
     Doctor(){
         System.out.println("Construyendo el metodo constructor");
@@ -27,22 +28,33 @@ public class Doctor{
     public void showId(){
         System.out.println("ID Doctor " + id);
     }
+    //#paso6 crear la coleccion de objetos y se instancia
+
     ArrayList<AvailableAppoinment> availableAppoinments = new ArrayList<>();
+    //#paso5 crear el metodo
+
     public void addAvailableAppoinment(Date date, String time){
         availableAppoinments.add(new Doctor.AvailableAppoinment(date,time));
     }
 
+    //#paso7 devolver el array que se acabo de hacer
+
     public ArrayList<AvailableAppoinment> getAvailableAppoinments(){
         return availableAppoinments;
     }
+    //Clase independiente #paso1
     public static class AvailableAppoinment{
+        //#paso2 crear atributos
         private int id;
         private Date date;
         private String time;
+        //#paso3 crear constructor
+
         public AvailableAppoinment(Date date, String time){
             this.date = date;
             this.time = time;
         }
+        //#paso4 crear getters&setters
 
         public int getId() {
             return id;

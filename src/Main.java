@@ -1,14 +1,27 @@
+import java.util.Date;
 import static ui.UIMenu.*;
 
 public class Main {
     public static void main(String[] args) {
        // showMenu();
         Doctor myDoctor = new Doctor("Angie Bareno ","Trabajo Social");
-      //  System.out.println(myDoctor.name);
-       // System.out.println(myDoctor.speciality);
+        //#paso8 se crean las nuevas fechas
 
 
-       // patient.weight = 60.5;
+        myDoctor.addAvailableAppoinment(new Date(), "4pm");
+        myDoctor.addAvailableAppoinment(new Date(), "10pm");
+        myDoctor.addAvailableAppoinment(new Date(), "1pm");
+        //#paso10 devolver la lista de las fechas
+
+        for(Doctor.AvailableAppoinment aA: myDoctor.getAvailableAppoinments()){
+            System.out.println(aA.getDate() + " " + aA.getTime());
+        };
+
+        //#paso9 devolver la lista de objetos
+
+        System.out.println(myDoctor.getAvailableAppoinments());
+
+/*
         Patient patient = new Patient("David","david@gmail.com");
         Patient patient2 = new Patient("Daniel","daniel@gmail.com");
 
@@ -32,7 +45,7 @@ public class Main {
         System.out.print(". El peso actual del paciente 1 es: " + patient.getWeight());
 
         patient.setPhoneNumber("12345678");
-        System.out.println(patient.getPhoneNumber());
+        System.out.println(patient.getPhoneNumber());*/
 
 
 
